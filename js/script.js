@@ -1,5 +1,6 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const clouds = document.querySelector('.clouds');
 
 const jump =() => {
     var tecla = window.event.keyCode;
@@ -18,10 +19,14 @@ const loop = setInterval(() =>{
 
     const pipePosition = pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px','');
+    const cloudsPosition = clouds.offsetLeft;
 
     if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80 ){
         pipe.style.animation = 'none'
         pipe.style.left = `${pipePosition}px`
+
+        clouds.style.animation = 'none'
+        clouds.style.left = `${cloudsPosition}px`
 
         mario.style.animation = 'none'
         mario.style.bottom = `${marioPosition}px`
