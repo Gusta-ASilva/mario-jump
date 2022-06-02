@@ -2,17 +2,15 @@ const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
 
-const jump =() => {
-    var tecla = window.event.keyCode;
-
-    if(tecla == 32 || tecla == 38){
+const jump = () => {
+    
     mario.classList.add('jump');
 
     setTimeout(() =>{
     
     mario.classList.remove('jump');   
 
-    },500) }
+    },500)
 }
 
 const loop = setInterval(() =>{
